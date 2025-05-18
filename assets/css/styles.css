@@ -1,0 +1,302 @@
+@import "tailwindcss";
+
+/* Your custom CSS can go here */
+
+html,
+body {
+  font-family: "Questrial", sans-serif;
+  background-color: white;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.text-traffic-yellow {
+  color: #ffc300;
+}
+
+.text-traffic-yellow-dark {
+  color: #f2ba02;
+}
+.text-traffic-red {
+  color: #d50000;
+}
+
+.bg-traffic-yellow {
+  background-color: #ffc300;
+}
+
+.border-traffic-yellow {
+  border-color: #ffc300;
+}
+
+.bg-traffic-yellow-dark {
+  background-color: #f2ba02;
+}
+.bg-traffic-red {
+  background-color: #d50000;
+}
+
+.slideshow {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slideshow img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 2s ease-in-out, transform 4s ease-in-out;
+}
+
+.slideshow img.active {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Style for the active link icon */
+@media (max-width: 767px) {
+  nav a i.fa-caret-up {
+    display: none;
+  }
+}
+
+@media (max-width: 540px) {
+  nav a i.fa-caret-up {
+    display: none;
+  }
+}
+nav a i.fa-caret-up {
+  font-size: 2rem;
+  /* color: red; */
+}
+
+/* Index html image */
+
+.move {
+  top: -120px;
+}
+
+.moved {
+  top: 260px;
+}
+
+.move-about {
+  top: -50px;
+}
+
+.card-design-red {
+  border-left: 6px solid #d50000;
+}
+
+.card-design-yellow {
+  border-left: 6px solid #ffc300;
+}
+
+.card-design-black {
+  border-left: 6px solid #000000;
+}
+
+.socials {
+  border: 2px solid #d50000;
+}
+
+.socials:hover {
+  color: #ffc300;
+}
+/* .service-pos {
+  top: 215px;
+} */
+
+.nav-hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nav-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Ensure proper positioning for .service-pos */
+
+@media (max-width: 767px) {
+  .move,
+  .moved,
+  .service-pos {
+    top: 0;
+  }
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+.rotate-card {
+  transform: rotate(-1.5deg);
+  transition: transform 0.4s ease;
+}
+
+.hover-rotate:hover {
+  transform: rotate(0deg);
+}
+
+.img-static {
+  transform: none !important;
+  transition: none !important;
+}
+
+.blob {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.15;
+  animation: float 8s ease-in-out infinite;
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-down {
+  animation: slideDown 3s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 3s ease-out;
+}
+
+.animate-slide-left {
+  animation: slideLeft 3s ease-out;
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown 1s;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 1s;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes textFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes zoomFade {
+  0% {
+    transform: scale(1.05);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-zoom-fade {
+  animation: zoomFade 2.5s ease-out forwards;
+}
+
+.animate-text-fade {
+  animation: textFadeIn 1.2s ease-out forwards;
+  animation-fill-mode: forwards;
+}
+
+.delay-\[1000ms\] {
+  animation-delay: 1s;
+}
+
+.delay-\[2000ms\] {
+  animation-delay: 2s;
+}
+
+.delay-\[3000ms\] {
+  animation-delay: 3s;
+}
+
+header {
+  z-index: 50;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+#hero {
+  z-index: 10;
+  position: relative;
+}
