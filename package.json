@@ -1,0 +1,33 @@
+{
+  "name": "traffic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.5",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "postcss-cli": "^11.0.1",
+    "tailwindcss": "^4.1.5"
+  },
+  "scripts": {
+    "build:css": "postcss ./assets/css/styles.css -o ./dist/assets/css/output.css --watch",
+    "build": "npm run build:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Temmarie/TrafficWork.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Temmarie/TrafficWork/issues"
+  },
+  "homepage": "https://github.com/Temmarie/TrafficWork#readme",
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@tailwindcss/cli": "^4.1.5"
+  }
+}
