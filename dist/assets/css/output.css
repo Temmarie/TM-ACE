@@ -409,6 +409,9 @@
   .h-96 {
     height: calc(var(--spacing) * 96);
   }
+  .h-\[2rem\] {
+    height: 2rem;
+  }
   .h-\[30rem\] {
     height: 30rem;
   }
@@ -447,6 +450,9 @@
   }
   .w-40 {
     width: calc(var(--spacing) * 40);
+  }
+  .w-\[2rem\] {
+    width: 2rem;
   }
   .w-full {
     width: 100%;
