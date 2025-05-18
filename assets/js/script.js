@@ -1,33 +1,33 @@
-// --- Load Navbar First ---
+// --- Toggle Mobile Menu ---
+function toggleMenu() {
+  const menu = document.getElementById("menu");
+  menu.classList.toggle("hidden");
+}
+
+// --- Close Mobile Menu on Link Click ---
+const mobileMenuLinks = document.querySelectorAll("#mobile-menu a");
+mobileMenuLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    const menu = document.getElementById("mobile-menu");
+    menu.classList.add("hidden");
+  });
+});
+
+// --- Load Navbar and Footer ---
 fetch("navbar.html")
   .then((response) => response.text())
   .then((data) => {
     document.getElementById("navbar").innerHTML = data;
 
-    // --- Toggle Mobile Menu ---
-    const menuBtn = document.getElementById("menu-btn");
-    const menu = document.getElementById("menu");
-    if (menuBtn && menu) {
-      menuBtn.addEventListener("click", () => {
-        menu.classList.toggle("hidden");
-      });
-    }
-
-    // --- Close Mobile Menu on Link Click ---
-    const mobileMenuLinks = document.querySelectorAll("#mobile-menu a");
-    mobileMenuLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        document.getElementById("mobile-menu").classList.add("hidden");
-      });
-    });
-
-    // --- Highlight Active Link ---
+    // Highlight Active Link (must wait until navbar loads)
     const navLinks = document.querySelectorAll(".nav_link");
     const currentPage = window.location.pathname.split("/").pop();
+
     navLinks.forEach((navLink) => {
       const pageLink = navLink.getAttribute("href");
       if (pageLink === currentPage) {
         navLink.classList.add("text-yellow-400", "font-bold", "relative");
+
         const icon = document.createElement("i");
         icon.className =
           "fa-solid fa-caret-up text-red-500 text-xs absolute -bottom-10 left-1/2 transform -translate-x-1/2";
@@ -35,12 +35,14 @@ fetch("navbar.html")
       }
     });
 
-    // --- Scroll Behavior on Navbar ---
+    // Scroll Behavior on Navbar
     const navbar = document.getElementById("navbar-scroll");
     let lastScrollTop = 0;
+
     window.addEventListener("scroll", () => {
       const currentScroll =
         window.pageYOffset || document.documentElement.scrollTop;
+
       if (currentScroll > lastScrollTop && currentScroll > 100) {
         navbar.classList.add("opacity-0", "-translate-y-full");
         navbar.classList.remove("opacity-100", "translate-y-0");
@@ -48,20 +50,20 @@ fetch("navbar.html")
         navbar.classList.remove("opacity-0", "-translate-y-full");
         navbar.classList.add("opacity-100", "translate-y-0");
       }
+
       lastScrollTop = Math.max(currentScroll, 0);
     });
   });
 
-// --- Load Footer ---
 fetch("footer.html")
   .then((response) => response.text())
   .then((data) => {
     document.getElementById("footer").innerHTML = data;
   });
 
-// --- DOMContentLoaded for Everything Else ---
+// --- Main DOMContentLoaded logic ---
 document.addEventListener("DOMContentLoaded", () => {
-  // --- Show More Button ---
+  // Show More Button
   const showMoreBtn = document.getElementById("show-more-btn");
   const list = document.getElementById("roles-list");
 
@@ -80,12 +82,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --- Project Carousel ---
+  // Project Carousel
   const carousel = document.getElementById("carousel");
   const cards = carousel?.querySelectorAll("div.group");
   const dotsContainer = document.getElementById("carousel-dots");
 
-  if (carousel && cards?.length && dotsContainer) {
+  if (carousel && cards.length) {
     const cardsPerView =
       window.innerWidth >= 1024 ? 4 : window.innerWidth >= 768 ? 2 : 1;
     const totalDots = Math.ceil(cards.length / cardsPerView);
@@ -126,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
     updateActiveDot();
   }
 
-  // --- Testimonials Carousel ---
+  // Testimonials Carousel
   const slidesContainer = document.getElementById("carousel-slides");
   if (slidesContainer) {
     const slides = slidesContainer.children;
@@ -155,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
     updateCarousel();
   }
 
-  // --- Slideshow ---
+  // Slideshow
   const slideshow = document.querySelector(".slideshow");
   if (slideshow) {
     const images = slideshow.children;
