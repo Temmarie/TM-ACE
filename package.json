@@ -11,7 +11,7 @@
     "tailwindcss": "^4.1.5"
   },
   "scripts": {
-    "build:css": "postcss ./assets/css/styles.css -o ./dist/assets/css/output.css --watch",
+    "build:css": "postcss ./assets/css/styles.css -o ./dist/assets/css/output.css",
     "build": "npm run build:css"
   },
   "repository": {
