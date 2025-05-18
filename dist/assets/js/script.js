@@ -21,17 +21,20 @@ fetch("navbar.html")
 
     // Highlight Active Link (must wait until navbar loads)
     const navLinks = document.querySelectorAll(".nav_link");
-    const currentPage = window.location.pathname.split("/").pop();
+    let currentPage = window.location.pathname.split("/").pop();
+    if (currentPage === "") currentPage = "index.html";
 
     navLinks.forEach((navLink) => {
       const pageLink = navLink.getAttribute("href");
       if (pageLink === currentPage) {
         navLink.classList.add("text-yellow-400", "font-bold", "relative");
 
-        const icon = document.createElement("i");
-        icon.className =
-          "fa-solid fa-caret-up text-red-500 text-xs absolute -bottom-10 left-1/2 transform -translate-x-1/2";
-        navLink.appendChild(icon);
+        if (!navLink.querySelector("i.fa-caret-up")) {
+          const icon = document.createElement("i");
+          icon.className =
+            "fa-solid fa-caret-up text-red-500 text-xs absolute -bottom-10 left-1/2 transform -translate-x-1/2";
+          navLink.appendChild(icon);
+        }
       }
     });
 
