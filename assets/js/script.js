@@ -19,43 +19,48 @@ fetch("navbar.html")
   .then((data) => {
     document.getElementById("navbar").innerHTML = data;
 
-    // Highlight Active Link (must wait until navbar loads)
-    let currentPage = window.location.pathname.split("/").pop();
-    if (currentPage === "" || !currentPage.endsWith(".html"))
-      currentPage = "index.html";
-    if (currentPage === "") currentPage = "index.html";
+    // Wait until the browser renders the injected HTML
+    requestAnimationFrame(() => {
+      const navLinks = document.querySelectorAll(".nav_link");
+      let currentPage = window.location.pathname.split("/").pop();
+      if (currentPage === "" || !currentPage.endsWith(".html")) {
+        currentPage = "index.html";
+      }
 
-    navLinks.forEach((navLink) => {
-      const pageLink = navLink.getAttribute("href");
-      if (pageLink === currentPage) {
-        navLink.classList.add("text-yellow-400", "font-bold", "relative");
+      navLinks.forEach((navLink) => {
+        const pageLink = navLink.getAttribute("href");
+        if (pageLink === currentPage) {
+          navLink.classList.add("text-yellow-400", "font-bold", "relative");
 
-        if (!navLink.querySelector("i.fa-caret-up")) {
-          const icon = document.createElement("i");
-          icon.className =
-            "fa-solid fa-caret-up text-red-500 text-xs absolute -bottom-10 left-1/2 transform -translate-x-1/2";
-          navLink.appendChild(icon);
+          if (!navLink.querySelector("i.fa-caret-up")) {
+            const icon = document.createElement("i");
+            icon.className =
+              "fa-solid fa-caret-up text-red-500 text-xs absolute -bottom-10 left-1/2 transform -translate-x-1/2";
+            navLink.appendChild(icon);
+          }
         }
+      });
+
+      // Scroll behavior setup here too (after navbar exists)
+      const navbar = document.getElementById("navbar-scroll");
+      if (navbar) {
+        let lastScrollTop = 0;
+
+        window.addEventListener("scroll", () => {
+          const currentScroll =
+            window.pageYOffset || document.documentElement.scrollTop;
+
+          if (currentScroll > lastScrollTop && currentScroll > 100) {
+            navbar.classList.add("opacity-0", "-translate-y-full");
+            navbar.classList.remove("opacity-100", "translate-y-0");
+          } else {
+            navbar.classList.remove("opacity-0", "-translate-y-full");
+            navbar.classList.add("opacity-100", "translate-y-0");
+          }
+
+          lastScrollTop = Math.max(currentScroll, 0);
+        });
       }
-    });
-
-    // Scroll Behavior on Navbar
-    const navbar = document.getElementById("navbar-scroll");
-    let lastScrollTop = 0;
-
-    window.addEventListener("scroll", () => {
-      const currentScroll =
-        window.pageYOffset || document.documentElement.scrollTop;
-
-      if (currentScroll > lastScrollTop && currentScroll > 100) {
-        navbar.classList.add("opacity-0", "-translate-y-full");
-        navbar.classList.remove("opacity-100", "translate-y-0");
-      } else {
-        navbar.classList.remove("opacity-0", "-translate-y-full");
-        navbar.classList.add("opacity-100", "translate-y-0");
-      }
-
-      lastScrollTop = Math.max(currentScroll, 0);
     });
   });
 
