@@ -534,17 +534,11 @@
   .grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
   .flex-col {
     flex-direction: column;
   }
   .flex-col-reverse {
     flex-direction: column-reverse;
-  }
-  .flex-nowrap {
-    flex-wrap: nowrap;
   }
   .flex-wrap {
     flex-wrap: wrap;
@@ -1500,6 +1494,23 @@ body {
 @media (max-width: 540px) {
   nav a i.fa-caret-up {
     display: none;
+  }
+  nav a i.fa-caret-up {
+    display: none;
+    font-size: 1rem;
+  }
+  nav a.active i.fa-caret-up {
+    display: inline-block;
+    color: #facc15;
+    position: absolute;
+    bottom: -1.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  @media (max-width: 767px) {
+    nav a i.fa-caret-up {
+      display: none !important;
+    }
   }
 }
 nav a i.fa-caret-up {
