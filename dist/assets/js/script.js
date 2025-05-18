@@ -22,7 +22,8 @@ fetch("navbar.html")
     // Highlight Active Link (must wait until navbar loads)
     const navLinks = document.querySelectorAll(".nav_link");
     let currentPage = window.location.pathname.split("/").pop();
-    if (currentPage === "") currentPage = "index.html";
+    if (currentPage === "" || !currentPage.endsWith(".html"))
+      currentPage = "index.html";
 
     navLinks.forEach((navLink) => {
       const pageLink = navLink.getAttribute("href");
