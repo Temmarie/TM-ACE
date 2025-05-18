@@ -12,7 +12,9 @@
   },
   "scripts": {
     "build:css": "postcss ./assets/css/styles.css -o ./dist/assets/css/output.css",
-    "build": "npm run build:css"
+    "copy:js": "mkdir -p dist/assets/js && cp assets/js/*.js dist/assets/js",
+    "copy:favicon": "cp -r favicon dist/",
+    "build": "npm run build:css && npm run copy:js && npm run copy:favicon"
   },
   "repository": {
     "type": "git",
