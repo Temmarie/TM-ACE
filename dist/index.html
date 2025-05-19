@@ -96,13 +96,33 @@
             across the UK.
           </small>
           <h1
-            class="uppercase text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 opacity-0 animate-text-fade delay-[2000ms]"
+            class="uppercase text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 opacity-0 animate-text-fade delay-[2000ms] flex items-center space-x-4"
           >
-            The Safe Way
+            <!-- Logo + Brand Name -->
+            <span class="flex items-center space-x-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="60"
+                height="60"
+                fill="#FFC300"
+                transform="rotate(180)"
+                viewBox="0 0 32 32"
+              >
+                <path
+                  d="M23.504 8.78c-2.015-.745-3.967-.522-5.879.371-.18.084-.343.215-.634.229.718-1.897 1.157-3.838 2.633-5.38h-7.211c.619.864 1.222 1.65 1.569 2.582s.673 1.841 1.021 2.802c-.301-.029-.458-.151-.624-.229-1.47-.675-2.989-.999-4.613-.72-2.32.398-4.014 1.795-4.37 4.007-.157.969.015 1.897.357 2.802.687 1.831 1.879 3.297 3.298 4.607 2.172 2.015 4.109 4.226 5.803 6.621l.089.132c.322.458 1.03 1.395 1.03 1.395l.631-.874c.937-1.461 2.097-2.833 3.225-4.131 1.103-1.269 2.331-2.449 3.573-3.602 1.449-1.344 2.543-2.943 3.069-4.875.686-2.515-.523-4.835-2.967-5.738z"
+                />
+              </svg>
+              <span>TM ACE</span>
+            </span>
+
+            <!-- Tilde and Tagline -->
+            <span class="text-yellow-400">~</span>
+            <span class="text-white">The Safe Way</span>
           </h1>
+
           <a
             href="../dist/contact.html"
-            class="mt-6 bg-traffic-yellow hover:bg-opacity-75 text-white px-6 py-3 inline-block font-bold rounded transition duration-300 opacity-0 animate-text-fade delay-[3000ms]"
+            class="mt-6 bg-traffic-yellow hover:bg-opacity-75 text-black px-6 py-3 inline-block font-bold rounded transition duration-300 opacity-0 animate-text-fade delay-[3000ms]"
           >
             Discover how we can help
           </a>
@@ -131,7 +151,7 @@
             <p
               class="text-gray-800 text-base sm:text-lg md:text-xl leading-relaxed"
             >
-              TM Ace Ltd. specializes in providing skilled traffic management
+              TM Ace specializes in providing skilled traffic management
               personnel and comprehensive training programs to enhance the
               safety and efficiency of traffic management projects throughout
               the UK. We are committed to delivering tailored solutions to meet
@@ -174,7 +194,7 @@
           <div class="p-6 rounded-lg">
             <a
               href="./about.html"
-              class="bg-traffic-yellow hover:bg-traffic-red no-underline hover:font-extrabold text-white px-6 py-3 inline-block font-bold rounded transition"
+              class="bg-traffic-yellow hover:bg-traffic-red no-underline hover:font-extrabold text-black px-6 py-3 inline-block font-bold rounded transition"
             >
               ABOUT US
             </a>
@@ -186,20 +206,17 @@
         <div
           class="bg-yellow-50 min-h-screen flex items-center justify-center py-10 px-4"
         >
-          <div
-            class="relative max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-10"
-          >
-            <!-- Left Column: Card 1 -->
-
+          <div class="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Card 1 -->
             <div
-              class="relative rotate-card hover-rotate bg-white card-design-red rounded-xl shadow-2xl overflow-hidden p-4 flex flex-col moved animate-slide-up"
-              style="height: fit-content"
+              class="relative rotate-card hover-rotate bg-white card-design-red rounded-xl shadow-2xl overflow-hidden p-4 flex flex-col"
             >
               <div class="absolute top-[-30%] left-[-30%] blob">
+                <!-- SVG blob -->
                 <svg viewBox="0 0 200 200" xmlns="https://www.w3.org/TR/SVG/">
                   <path
                     fill="red"
-                    d="M46.3,-62.3C59.3,-55.5,68.2,-39.5,69.3,-23.3C70.3,-7.2,63.6,8.9,56.2,24.2C48.9,39.5,40.8,53.9,28.1,62.5C15.5,71.1,-1.8,73.9,-16.3,67.6C-30.7,61.4,-42.4,46.2,-54.4,30.9C-66.5,15.7,-79,-0.7,-74.5,-13.5C-70.1,-26.3,-48.6,-35.5,-31.5,-42.6C-14.4,-49.7,-1.8,-54.7,12.7,-63.3C27.2,-71.8,42.6,-83,46.3,-62.3Z"
+                    d="M46.3,-62.3C59.3,-55.5,68.2,-39.5..."
                     transform="translate(100 100)"
                   />
                 </svg>
@@ -217,64 +234,87 @@
               </p>
             </div>
 
-            <!-- Right Column: Cards 2 and 3 -->
-            <div class="flex flex-col gap-10">
-              <!-- Card 2 -->
-              <div
-                class="relative rotate-card hover-rotate bg-white card-design-yellow rounded-xl shadow-2xl overflow-hidden p-4 flex flex-col h-full animate-slide-down"
-                style="height: max-content"
-              >
-                <div class="absolute top-[-20%] right-[-20%] blob">
-                  <svg viewBox="0 0 200 200" xmlns="https://www.w3.org/TR/SVG/">
-                    <path
-                      fill="#FACC15"
-                      d="M40.6,-67.2C51.9,-58.5,59.5,-43.2,63.4,-29.1C67.3,-15,67.4,-2.2,64.1,10.6C60.9,23.3,54.4,36,44.6,46.7C34.9,57.3,21.9,65.9,6.5,67.8C-8.9,69.6,-17.8,64.6,-30.4,59.3C-43,54,-59.3,48.3,-68.4,37.1C-77.5,26,-79.4,9.5,-75.5,-5.2C-71.7,-20,-61.9,-32.8,-51.3,-44.5C-40.7,-56.1,-29.3,-66.6,-15.2,-70.5C-1,-74.3,15.9,-71.4,30.7,-64.4C45.5,-57.3,58.2,-46,40.6,-67.2Z"
-                      transform="translate(100 100)"
-                    />
-                  </svg>
-                </div>
-                <img
-                  src="https://res.cloudinary.com/temmarie/image/upload/v1747598937/training_qaatpv.webp"
-                  class="rounded-xl object-cover h-60 w-full shadow-lg img-static"
-                  alt="Signage Deployment"
-                />
-                <h3 class="text-xl mt-4 font-semibold text-traffic-yellow">
-                  Certified Professionals
-                </h3>
-                <p class="text-gray-600 text-sm">
-                  Ensuring staff are trained to the best industry standards and
-                  certified.
-                </p>
+            <!-- Card 2 -->
+            <div
+              class="relative rotate-card hover-rotate bg-white card-design-yellow rounded-xl shadow-2xl overflow-hidden p-4 flex flex-col"
+            >
+              <div class="absolute top-[-20%] right-[-20%] blob">
+                <!-- SVG blob -->
+                <svg viewBox="0 0 200 200" xmlns="https://www.w3.org/TR/SVG/">
+                  <path
+                    fill="#FACC15"
+                    d="M40.6,-67.2C51.9,-58.5,59.5,-43.2..."
+                    transform="translate(100 100)"
+                  />
+                </svg>
               </div>
+              <img
+                src="https://res.cloudinary.com/temmarie/image/upload/v1747598937/training_qaatpv.webp"
+                class="rounded-xl object-cover h-60 w-full shadow-lg img-static"
+                alt="Signage Deployment"
+              />
+              <h3 class="text-xl mt-4 font-semibold text-traffic-yellow">
+                Certified Professionals
+              </h3>
+              <p class="text-gray-600 text-sm">
+                Ensuring staff are trained to the best industry standards and
+                certified.
+              </p>
+            </div>
 
-              <!-- Card 3 -->
-              <div
-                class="relative rotate-card hover-rotate bg-white card-design-black border-black rounded-xl shadow-2xl overflow-hidden p-4 flex flex-col h-full animate-slide-up"
-                style="height: max-content"
-              >
-                <div class="absolute bottom-[-30%] left-[-30%] blob">
-                  <svg viewBox="0 0 200 200" xmlns="https://www.w3.org/TR/SVG/">
-                    <path
-                      fill="black"
-                      d="M38.5,-66.6C49.9,-58.1,59.9,-49.4,67.5,-37.9C75.2,-26.5,80.6,-12.2,78.5,1.4C76.5,15,67.1,28.1,57.6,42.8C48.2,57.5,38.7,73.8,25.1,78.7C11.5,83.6,-6.1,77,-22.5,70.3C-39,63.6,-54.3,56.7,-63.1,44.3C-71.9,31.9,-74.1,14,-70.7,-2.3C-67.3,-18.7,-58.3,-34.5,-46.8,-44.5C-35.3,-54.5,-21.2,-58.7,-6.1,-60.6C9,-62.6,18,-62.4,38.5,-66.6Z"
-                      transform="translate(100 100)"
-                    />
-                  </svg>
-                </div>
-                <img
-                  src="https://res.cloudinary.com/temmarie/image/upload/v1747598915/conesss_apdaqw.webp"
-                  class="rounded-xl object-cover h-60 w-full shadow-lg img-static"
-                  alt="Temporary Traffic Lights"
-                />
-                <h3 class="text-xl mt-4 font-semibold text-black">
-                  Public Liason and stakeholder management
-                </h3>
-                <p class="text-gray-600 text-sm">
-                  Consolidating traffic management needs by providing an
-                  effective interface between clients, councils, police, and the
-                  wider stakeholders.
-                </p>
+            <!-- Card 3 -->
+            <div
+              class="relative rotate-card hover-rotate bg-white card-design-black border-black rounded-xl shadow-2xl overflow-hidden p-4 flex flex-col"
+            >
+              <div class="absolute bottom-[-30%] left-[-30%] blob">
+                <!-- SVG blob -->
+                <svg viewBox="0 0 200 200" xmlns="https://www.w3.org/TR/SVG/">
+                  <path
+                    fill="black"
+                    d="M38.5,-66.6C49.9,-58.1,59.9,-49.4..."
+                    transform="translate(100 100)"
+                  />
+                </svg>
               </div>
+              <img
+                src="https://res.cloudinary.com/temmarie/image/upload/v1747598927/on-site_au84mb.webp"
+                class="rounded-xl object-cover h-60 w-full shadow-lg img-static"
+                alt="Temporary Traffic Lights"
+              />
+              <h3 class="text-xl mt-4 font-semibold text-black">
+                Public Liaison and Stakeholder Management
+              </h3>
+              <p class="text-gray-600 text-sm">
+                Providing an effective interface between clients, councils,
+                police, and other stakeholders.
+              </p>
+            </div>
+
+            <!-- Card 4 -->
+            <div
+              class="relative rotate-card hover-rotate bg-white card-design-black border-black rounded-xl shadow-2xl overflow-hidden p-4 flex flex-col"
+            >
+              <div class="absolute bottom-[-30%] left-[-30%] blob">
+                <!-- SVG blob -->
+                <svg viewBox="0 0 200 200" xmlns="https://www.w3.org/TR/SVG/">
+                  <path
+                    fill="black"
+                    d="M38.5,-66.6C49.9,-58.1,59.9,-49.4..."
+                    transform="translate(100 100)"
+                  />
+                </svg>
+              </div>
+              <img
+                src="https://res.cloudinary.com/temmarie/image/upload/v1747598915/conesss_apdaqw.webp"
+                class="rounded-xl object-cover h-60 w-full shadow-lg img-static"
+                alt="Traffic Cones"
+              />
+              <h3 class="text-xl mt-4 font-semibold text-black">
+                Ensuring Site's Compliance
+              </h3>
+              <p class="text-gray-600 text-sm">
+                Ensuring that all our sites are compliant at all times.
+              </p>
             </div>
           </div>
         </div>
@@ -365,8 +405,8 @@
           </div>
           <h3 class="text-xl font-semibold">Installation &<br />Off-Hire</h3>
           <p class="text-gray-500 mt-2 text-xs">
-            Installation and de-installation/off-hire of compliant temporary
-            traffic management systems.
+            Installation and off-hire of compliant temporary traffic management
+            systems.
           </p>
         </a>
 
@@ -604,7 +644,7 @@
                 Professionalism & Ethics
               </h3>
               <p class="text-gray-600 text-sm leading-relaxed z-10 relative">
-                Demonstrating integrity and respect in every action and
+                Demonstrating integrity and ethics in every action and
                 stakeholder interface.
               </p>
             </div>
@@ -658,7 +698,7 @@
                 </p>
                 <div class="mt-6">
                   <h3 class="text-white font-bold text-xl">John Carter</h3>
-                  <p class="text-gray-400 text-sm">Businessman</p>
+                  <p class="text-gray-400 text-sm">Project Manager</p>
                 </div>
               </div>
 
