@@ -113,7 +113,7 @@ nav a i.fa-caret-up {
   top: 215px;
 } */
 
-.nav-hidden {
+/* .nav-hidden {
   transform: translateY(-100%);
   opacity: 0;
   pointer-events: none;
@@ -122,9 +122,31 @@ nav a i.fa-caret-up {
 .nav-visible {
   transform: translateY(0);
   opacity: 1;
+} */
+
+/* Active link styling */
+/* .nav-link.active {
+  font-weight: 900;
+  color: #ff4136; 
+  position: absolute;
+  bottom: -4.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.5rem;
+} */
+
+/* Hover effect */
+.nav-link:hover {
+  color: #ffc300;
+  font-weight: 700;
 }
 
 /* Ensure proper positioning for .service-pos */
+@media (max-width: 767px) {
+  nav-link i.fa-caret-up {
+    display: none;
+  }
+}
 
 @media (max-width: 767px) {
   .move,
