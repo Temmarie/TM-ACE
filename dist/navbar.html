@@ -25,13 +25,13 @@
       <div
         class="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-10"
       >
-        <!-- Logo -->
-        <a href="./index.html" class="flex items-center space-x-2">
-          <div class="p-2 rounded-full">
+        <!-- Logo + Brand -->
+        <a href="index.html" class="flex items-center space-x-4">
+          <div class="p-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="40"
-              height="40"
+              width="80"
+              height="80"
               fill="#FFC300"
               transform="rotate(180)"
               viewBox="0 0 32 32"
@@ -41,77 +41,88 @@
               />
             </svg>
           </div>
-          <span class="text-4xl font-bold tracking-wider uppercase">
-            TM ACE
-          </span>
+          <div class="flex flex-col">
+            <span
+              class="text-4xl font-bold TM ACE text-yellow-400 tracking-wider uppercase"
+            >
+              TM ACE
+            </span>
+          </div>
         </a>
 
-        <!-- Hamburger Button -->
-        <button
-          class="md:hidden text-white text-2xl"
-          onclick="toggleMenu()"
-          style="background-color: transparent; border: 0"
-        >
-          <i class="fas fa-bars"></i>
-        </button>
-
-        <!-- Navigation -->
-        <nav
-          id="menu"
-          class="uppercase hidden md:flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8 absolute md:static top-16 left-0 w-full md:w-auto bg-black md:bg-transparent px-6 md:px-0 py-6 md:py-0 text-sm font-semibold"
-        >
-          <a
-            href="index.html"
-            class="nav_link block py-2 text-white no-underline hover:text-yellow-400"
-          >
-            Home
-          </a>
-
-          <a
-            href="about.html"
-            class="nav_link block py-2 text-white no-underline hover:text-yellow-400"
-          >
-            About
-          </a>
-          <a
-            href="services.html"
-            class="nav_link block py-2 text-white no-underline hover:text-yellow-400"
-          >
-            Services
-          </a>
-          <a
-            href="training.html"
-            class="nav_link block py-2 text-white no-underline hover:text-yellow-400"
-          >
-            Training
-          </a>
-          <a
-            href="contact.html"
-            class="nav_link block py-2 text-white no-underline hover:text-yellow-400"
-          >
-            Contact
-          </a>
-          <a
-            href="tel:01474612085"
-            class="nav_link block py-2 text-white no-underline hover:text-yellow-400 flex items-center space-x-2"
-          >
-            <i class="fas fa-phone"></i>
-            <span>01474 612085</span>
-          </a>
-
-          <!-- Social Icons (Mobile Only) -->
-          <div class="flex space-x-4 md:hidden pt-4">
-            <a href="#" class="text-white hover:text-yellow-400">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" class="text-white hover:text-yellow-400">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="text-white hover:text-yellow-400">
-              <i class="fab fa-instagram"></i>
+        <!-- Nav + Hamburger -->
+        <nav class="flex items-center space-x-6">
+          <!-- Desktop Nav -->
+          <div class="hidden md:flex items-center space-x-6">
+            <a
+              href="index.html"
+              class="text-white/80 nav-link transition-colors"
+              >Home</a
+            >
+            <a
+              href="about.html"
+              class="text-white/80 nav-link transition-colors"
+              >About</a
+            >
+            <a
+              href="services.html"
+              class="text-white/80 nav-link transition-colors"
+              >Services</a
+            >
+            <a
+              href="training.html"
+              class="text-white/80 nav-link transition-colors"
+              >Training</a
+            >
+            <a
+              href="contact.html"
+              class="text-white/80 nav-link transition-colors"
+              >Contact</a
+            >
+            <a
+              href="tel:01474612085"
+              class="py-2 text-white no-underline flex items-center space-x-2"
+            >
+              <i class="fas fa-phone"></i><span>+44 1474 612085</span>
             </a>
           </div>
+
+          <!-- Hamburger (Mobile only) -->
+          <button
+            id="mobile-menu-button"
+            class="md:hidden text-white text-2xl focus:outline-none"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
         </nav>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="md:hidden pt-4 pb-4 px-4 space-y-4 hidden">
+        <a href="index.html" class="block nav-link text-white/80 py-2">Home</a>
+        <a href="about.html" class="block nav-link text-white/80 py-2">About</a>
+        <a href="services.html" class="block nav-link text-white/80 py-2"
+          >Services</a
+        >
+        <a href="training.html" class="block nav-link text-white/80 py-2"
+          >Training</a
+        >
+        <a href="contact.html" class="block nav-link text-white/80 py-2"
+          >Contact</a
+        >
+        <a
+          href="tel:01474612085"
+          class="flex items-center space-x-2 text-white"
+        >
+          <i class="fas fa-phone"></i><span>+44 1474 612085</span>
+        </a>
+        <div class="flex space-x-4 pt-4">
+          <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+        </div>
       </div>
     </header>
   </body>

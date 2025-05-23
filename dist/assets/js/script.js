@@ -1,92 +1,94 @@
-// --- Toggle Mobile Menu ---
-function toggleMenu() {
-  const menu = document.getElementById("menu");
-  menu.classList.toggle("hidden");
-}
-
-// --- Close Mobile Menu on Link Click ---
-const mobileMenuLinks = document.querySelectorAll("#mobile-menu a");
-mobileMenuLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    const menu = document.getElementById("mobile-menu");
-    menu.classList.add("hidden");
-  });
-});
-
-// --- Load Navbar and Footer ---
-fetch("navbar.html")
-  .then((response) => response.text())
-  .then((data) => {
-    document.getElementById("navbar").innerHTML = data;
-
-    // Wait until the browser renders the injected HTML
-    requestAnimationFrame(() => {
-      const navLinks = document.querySelectorAll(".nav_link");
-      let currentPage = window.location.pathname.split("/").pop();
-      if (currentPage === "" || !currentPage.endsWith(".html")) {
-        currentPage = "index.html";
-      }
-
-      navLinks.forEach((navLink) => {
-        const pageLink = navLink.getAttribute("href");
-        if (pageLink === currentPage) {
-          navLink.classList.add("text-yellow-400", "font-bold", "relative");
-
-          if (!navLink.querySelector("i.fa-caret-up")) {
-            const icon = document.createElement("i");
-            icon.className =
-              "fa-solid fa-caret-up text-red-500 text-xs absolute -bottom-10 left-1/2 transform -translate-x-1/2";
-            navLink.appendChild(icon);
-          }
-        }
-      });
-
-      // Scroll behavior setup here too (after navbar exists)
-      const navbar = document.getElementById("navbar-scroll");
-      if (navbar) {
-        let lastScrollTop = 0;
-
-        window.addEventListener("scroll", () => {
-          const currentScroll =
-            window.pageYOffset || document.documentElement.scrollTop;
-
-          if (currentScroll > lastScrollTop && currentScroll > 100) {
-            navbar.classList.add("opacity-0", "-translate-y-full");
-            navbar.classList.remove("opacity-100", "translate-y-0");
-          } else {
-            navbar.classList.remove("opacity-0", "-translate-y-full");
-            navbar.classList.add("opacity-100", "translate-y-0");
-          }
-
-          lastScrollTop = Math.max(currentScroll, 0);
-        });
-      }
-    });
-  });
-
-fetch("footer.html")
-  .then((response) => response.text())
-  .then((data) => {
-    document.getElementById("footer").innerHTML = data;
-  });
-
-// --- Main DOMContentLoaded logic ---
 document.addEventListener("DOMContentLoaded", () => {
+  const navbar = document.getElementById("navbar-scroll");
+  const mobileMenuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  // Scroll hide/show
+  let lastScrollTop = 0;
+  window.addEventListener("scroll", () => {
+    const currentScroll =
+      window.pageYOffset || document.documentElement.scrollTop;
+    if (currentScroll > lastScrollTop && currentScroll > 100) {
+      navbar.classList.add("opacity-0", "-translate-y-full");
+      navbar.classList.remove("opacity-100", "translate-y-0");
+    } else {
+      navbar.classList.remove("opacity-0", "-translate-y-full");
+      navbar.classList.add("opacity-100", "translate-y-0");
+    }
+    lastScrollTop = Math.max(currentScroll, 0);
+  });
+
+  // Hamburger toggle
+  if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.addEventListener("click", () => {
+      const isHidden = mobileMenu.classList.toggle("hidden");
+      mobileMenuButton.setAttribute("aria-expanded", String(!isHidden));
+    });
+
+    // Close menu on nav link click
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+        mobileMenuButton.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+
+  // Resize behavior
+  window.addEventListener("resize", () => {
+    if (
+      window.innerWidth >= 920 &&
+      mobileMenu &&
+      !mobileMenu.classList.contains("hidden")
+    ) {
+      mobileMenu.classList.add("hidden");
+      mobileMenuButton.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  // Highlight active nav link with caret
+  const navLinks = document.querySelectorAll(".nav-link");
+  let currentPage = window.location.pathname.split("/").pop();
+  if (!currentPage || !currentPage.endsWith(".html")) {
+    currentPage = "index.html";
+  }
+
+  navLinks.forEach((link) => {
+    const href = link.getAttribute("href");
+    if (href === currentPage) {
+      link.classList.add("text-yellow-400", "font-extrabold", "relative");
+      if (!link.querySelector("i.fa-caret-up")) {
+        const caret = document.createElement("i");
+        caret.className =
+          "fa-solid fa-caret-up text-red-500 text-5xl absolute -bottom-18 left-1/2 -translate-x-1/2";
+        link.appendChild(caret);
+        caret.style.fontSize = "2.5rem";
+        caret.style.bottom = "-4rem";
+        caret.style.position = "absolute";
+        caret.style.left = "80%";
+        caret.style.transform = "translateX(-50%)";
+      }
+    }
+  });
+
+  fetch("footer.html")
+    .then((response) => response.text())
+    .then((data) => {
+      document.getElementById("footer").innerHTML = data;
+    });
+
   // Show More Button
   const showMoreBtn = document.getElementById("show-more-btn");
   const list = document.getElementById("roles-list");
-
   if (showMoreBtn && list) {
     showMoreBtn.addEventListener("click", function () {
       const hiddenItems = list.querySelectorAll("li.hidden");
       const showingAll = hiddenItems.length === 0;
-
       list.querySelectorAll("li").forEach((item, index) => {
         if (index >= 5) {
           item.classList.toggle("hidden", showingAll);
         }
       });
-
       this.textContent = showingAll ? "Show More" : "Show Less";
     });
   }
@@ -95,7 +97,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const carousel = document.getElementById("carousel");
   const cards = carousel?.querySelectorAll("div.group");
   const dotsContainer = document.getElementById("carousel-dots");
-
   if (carousel && cards.length) {
     const cardsPerView =
       window.innerWidth >= 1024 ? 4 : window.innerWidth >= 768 ? 2 : 1;
@@ -142,7 +143,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (slidesContainer) {
     const slides = slidesContainer.children;
     let currentIndex = 0;
-
     for (let i = 0; i < slides.length; i++) {
       const dot = document.createElement("button");
       dot.className =
