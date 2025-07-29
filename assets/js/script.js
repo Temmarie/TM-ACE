@@ -17,12 +17,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Highlight active page
   const navLinks = document.querySelectorAll(".nav-link");
-  let currentPage = window.location.pathname.split("/").pop() || "index.html";
+  let currentPage = window.location.pathname;
+  if (currentPage === "/" || currentPage === "") {
+    currentPage = "index.html";
+  } else {
+    currentPage = currentPage.split("/").pop();
+  }
+
+  // Add .html for clean URLs if missing
+  if (!currentPage.includes(".html")) {
+    currentPage += ".html";
+  }
 
   navLinks.forEach((link) => {
-    if (link.getAttribute("href") === currentPage) {
+    const href = link.getAttribute("href");
+    if (href === currentPage) {
       link.classList.add("text-yellow-400", "font-extrabold", "relative");
-      // Only add the caret if screen is at least 768px wide (not mobile)
       if (!link.querySelector("i.fa-caret-up") && window.innerWidth >= 768) {
         const caret = document.createElement("i");
         caret.className = "fa-solid fa-caret-up text-red-500 absolute";
@@ -30,7 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
         caret.style.bottom = "-4rem";
         caret.style.left = "50%";
         caret.style.transform = "translateX(-50%)";
-        caret.style.position = "absolute";
         link.appendChild(caret);
       }
     }

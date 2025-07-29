@@ -1283,9 +1283,9 @@
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
   }
-  .md\:gap-1 {
+  .md\:gap-4 {
     @media (width >= 48rem) {
-      gap: calc(var(--spacing) * 1);
+      gap: calc(var(--spacing) * 4);
     }
   }
   .md\:px-10 {
