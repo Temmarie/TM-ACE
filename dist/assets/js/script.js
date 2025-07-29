@@ -1,10 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const navbar = document.getElementById("navbar-scroll");
-  const mobileMenuButton = document.getElementById("mobile-menu-button");
-  const mobileMenu = document.getElementById("mobile-menu");
-
-  // Scroll hide/show navbar
   let lastScrollTop = 0;
+
   window.addEventListener("scroll", () => {
     const currentScroll =
       window.pageYOffset || document.documentElement.scrollTop;
@@ -16,41 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
       navbar.classList.add("opacity-100", "translate-y-0");
     }
     lastScrollTop = Math.max(currentScroll, 0);
-  });
-  // Toggle mobile menu
-  if (mobileMenuButton && mobileMenu) {
-    mobileMenuButton.addEventListener("click", () => {
-      const isExpanded =
-        mobileMenuButton.getAttribute("aria-expanded") === "true";
-
-      // Toggle class ONCE
-      mobileMenu.classList.toggle("open");
-
-      // Toggle icon
-      mobileMenuButton.innerHTML = isExpanded
-        ? '<i class="fas fa-bars"></i>'
-        : '<i class="fas fa-times"></i>';
-
-      mobileMenuButton.setAttribute("aria-expanded", String(!isExpanded));
-    });
-
-    // Close menu on link click
-    mobileMenu.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        mobileMenu.classList.remove("open"); // Just remove
-        mobileMenuButton.setAttribute("aria-expanded", "false");
-        mobileMenuButton.innerHTML = '<i class="fas fa-bars"></i>';
-      });
-    });
-  }
-
-  // Hide mobile menu on resize to desktop
-  window.addEventListener("resize", () => {
-    if (window.innerWidth >= 768 && mobileMenu) {
-      mobileMenu.classList.remove("open"); // Just remove
-      mobileMenuButton.setAttribute("aria-expanded", "false");
-      mobileMenuButton.innerHTML = '<i class="fas fa-bars"></i>';
-    }
   });
 
   // Highlight active page
