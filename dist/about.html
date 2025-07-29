@@ -21,11 +21,27 @@
   <meta name="twitter:image" content="https://res.cloudinary.com/temmarie/image/upload/v1748014402/tmace-og_iv7o3c.jpg" /> <!-- Replace if needed -->
 
   <link rel="canonical" href="https://tmace.org/about" />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+
+
+    <!-- Fonts & Styles -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/output.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Questrial&display=swap"
+      rel="stylesheet"
+    />
+    
 </head>
 
 
   <body class="text-white">
-      <header
+
+
+        <header
       id="navbar-scroll"
       class="fixed top-0 left-0 w-full z-50 bg-black text-white py-4 transition-all duration-500 ease-in-out translate-y-0 opacity-100"
     >
@@ -33,28 +49,22 @@
         class="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-10"
       >
         <!-- Logo + Brand -->
-        <a href="index.html" class="flex items-center">
+
+        <a href="index.html" class="flex items-center space-x-4">
           <div class="p-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="60"
-              height="60"
-              fill="#FFC300"
-              transform="rotate(180)"
-              viewBox="0 0 32 32"
-              class="max-w-full h-auto"
-            >
-              <path
-                d="M23.504 8.78c-2.015-.745-3.967-.522-5.879.371-.18.084-.343.215-.634.229.718-1.897 1.157-3.838 2.633-5.38h-7.211c.619.864 1.222 1.65 1.569 2.582s.673 1.841 1.021 2.802c-.301-.029-.458-.151-.624-.229-1.47-.675-2.989-.999-4.613-.72-2.32.398-4.014 1.795-4.37 4.007-.157.969.015 1.897.357 2.802.687 1.831 1.879 3.297 3.298 4.607 2.172 2.015 4.109 4.226 5.803 6.621l.089.132c.322.458 1.03 1.395 1.03 1.395l.631-.874c.937-1.461 2.097-2.833 3.225-4.131 1.103-1.269 2.331-2.449 3.573-3.602 1.449-1.344 2.543-2.943 3.069-4.875.686-2.515-.523-4.835-2.967-5.738z"
-              />
-            </svg>
+            <!-- Spade SVG icon -->
+            <img
+              src="https://res.cloudinary.com/temmarie/image/upload/v1753782443/svgviewer-png-output_2_j1bqw1.png"
+              alt="logo"
+            />
           </div>
-          <div class="flex flex-col ml-2">
+          <div class="flex flex-col">
             <span
-              class="text-3xl font-bold TM ACE text-yellow-400 tracking-wider uppercase"
+              class="text-4xl font-bold text-yellow-400 tracking-wider uppercase"
             >
               TM ACE
             </span>
+            <small class="text-white text-sm"> The SAFEWAY </small>
           </div>
         </a>
 
@@ -138,8 +148,10 @@
     </header>
     <main>
       <!-- About Section -->
+
+      <div class="mt-5 p-2"></div>
       <section
-        class="relative min-h-screen grid md:grid-cols-2 gap-6 px-4 sm:px-6 py-12 md:py-20 max-w-7xl mx-auto text-black mt-5"
+        class="relative min-h-screen grid md:grid-cols-2 gap-6 px-4 sm:px-6 py-12 md:py-20 max-w-7xl mx-auto text-black mt-8"
       >
         <!-- Left Content -->
         <div class="space-y-6">
@@ -726,7 +738,135 @@
         </div>
       </section>
     </main>
-    <div id="footer"></div>
+
+        <!-- Footer -->
+    <footer class="bg-black text-gray-300 py-10 px-6">
+      <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8 text-sm">
+        <!-- Company Info -->
+        <div>
+          <a href="index.html" class="flex items-center">
+            <div class="p-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="60"
+                height="60"
+                fill="#FFC300"
+                transform="rotate(180)"
+                viewBox="0 0 32 32"
+                class="max-w-full h-auto"
+              >
+                <path
+                  d="M23.504 8.78c-2.015-.745-3.967-.522-5.879.371-.18.084-.343.215-.634.229.718-1.897 1.157-3.838 2.633-5.38h-7.211c.619.864 1.222 1.65 1.569 2.582s.673 1.841 1.021 2.802c-.301-.029-.458-.151-.624-.229-1.47-.675-2.989-.999-4.613-.72-2.32.398-4.014 1.795-4.37 4.007-.157.969.015 1.897.357 2.802.687 1.831 1.879 3.297 3.298 4.607 2.172 2.015 4.109 4.226 5.803 6.621l.089.132c.322.458 1.03 1.395 1.03 1.395l.631-.874c.937-1.461 2.097-2.833 3.225-4.131 1.103-1.269 2.331-2.449 3.573-3.602 1.449-1.344 2.543-2.943 3.069-4.875.686-2.515-.523-4.835-2.967-5.738z"
+                />
+              </svg>
+            </div>
+            <div class="flex flex-col ml-2">
+              <span
+                class="text-xl font-bold text-yellow-400 tracking-wider uppercase"
+              >
+                TM ACE Limited
+              </span>
+            </div>
+          </a>
+          <p class="text-gray-400">
+            Providing satisfaction-driven traffic management staffing and
+            training across the UK. Committed to safety, quality, and
+            reliability in every engagement.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-yellow-400 font-semibold mb-3">Quick Links</h4>
+          <div class="space-y-2">
+            <li class="list-none">
+              <a
+                href="../dist/about.html"
+                class="hover:text-yellow-400-dark transition no-underline text-white"
+                >About Us</a
+              >
+            </li>
+            <li class="list-none">
+              <a
+                href="../dist/training.html"
+                class="hover:text-yellow-400-dark transition no-underline text-white"
+                >Our Services</a
+              >
+            </li>
+            <li class="list-none">
+              <a
+                href="../dist/training.html"
+                class="hover:text-yellow-400-dark transition no-underline text-white"
+                >Training</a
+              >
+            </li>
+            <li class="list-none">
+              <a
+                href="../dist/contact.html"
+                class="hover:text-yellow-400-dark transition no-underline text-white"
+                >Contact</a
+              >
+            </li>
+          </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h4 class="text-yellow-400 font-semibold mb-3">Contact Us</h4>
+          <p class="mb-2">
+            <i class="fas fa-location text-red-500"></i>
+            Unit A, 82 James Carter Road <br />
+            Mildenhall, IP28 7DE<br />
+          </p>
+
+          <p class="mb-2">
+            <i class="fas fa-phone text-red-500"></i> +44 1474 612085
+          </p>
+          <p>
+            <i class="fas fa-envelope text-red-500"></i>
+            info@tmace.org
+          </p>
+        </div>
+
+        <!-- Social Media -->
+        <div>
+          <h4 class="text-yellow-400 font-semibold mb-3">Follow Us</h4>
+          <div class="flex space-x-4 text-lg">
+            <a
+              href="#"
+              class="transition border-2 px-2 py-1 no-underline text-white socials"
+              aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              href="#"
+              class="transition border-2 px-2 py-1 no-underline text-white socials"
+              aria-label="Twitter"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a
+              href="#"
+              class="transition border-2 px-2 py-1 no-underline text-white socials"
+              aria-label="LinkedIn"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a
+              href="#"
+              class="transition border-2 px-2 py-1 no-underline text-white socials"
+              aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div
+        class="border-t border-gray-700 mt-10 pt-6 text-center text-xs text-gray-500"
+      >
+        © 2025 TM Ace Limited All rights reserved.
+      </div>
+    </footer>
 
     <script src="assets/js/script.js" defer></script>
   </body>
