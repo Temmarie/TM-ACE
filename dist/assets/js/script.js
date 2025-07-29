@@ -17,25 +17,27 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     lastScrollTop = Math.max(currentScroll, 0);
   });
-
   // Toggle mobile menu
   if (mobileMenuButton && mobileMenu) {
     mobileMenuButton.addEventListener("click", () => {
       const isExpanded =
         mobileMenuButton.getAttribute("aria-expanded") === "true";
-      mobileMenu.classList.toggle("max-h-0");
-      mobileMenu.classList.toggle("max-h-[500px]");
+
+      // Toggle class ONCE
+      mobileMenu.classList.toggle("open");
+
+      // Toggle icon
       mobileMenuButton.innerHTML = isExpanded
         ? '<i class="fas fa-bars"></i>'
         : '<i class="fas fa-times"></i>';
+
       mobileMenuButton.setAttribute("aria-expanded", String(!isExpanded));
     });
 
     // Close menu on link click
     mobileMenu.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
-        mobileMenu.classList.add("max-h-0");
-        mobileMenu.classList.remove("max-h-[500px]");
+        mobileMenu.classList.remove("open"); // Just remove
         mobileMenuButton.setAttribute("aria-expanded", "false");
         mobileMenuButton.innerHTML = '<i class="fas fa-bars"></i>';
       });
@@ -45,8 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Hide mobile menu on resize to desktop
   window.addEventListener("resize", () => {
     if (window.innerWidth >= 768 && mobileMenu) {
-      mobileMenu.classList.add("max-h-0");
-      mobileMenu.classList.remove("max-h-[500px]");
+      mobileMenu.classList.remove("open"); // Just remove
       mobileMenuButton.setAttribute("aria-expanded", "false");
       mobileMenuButton.innerHTML = '<i class="fas fa-bars"></i>';
     }
@@ -72,12 +73,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   });
-
-  fetch("footer.html")
-    .then((response) => response.text())
-    .then((data) => {
-      document.getElementById("footer").innerHTML = data;
-    });
 
   // Show More Button
   const showMoreBtn = document.getElementById("show-more-btn");

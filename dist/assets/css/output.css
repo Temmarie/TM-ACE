@@ -424,9 +424,6 @@
   .max-h-0 {
     max-height: calc(var(--spacing) * 0);
   }
-  .max-h-\[500px\] {
-    max-height: 500px;
-  }
   .min-h-\[28rem\] {
     min-height: 28rem;
   }
